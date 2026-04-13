@@ -1,0 +1,538 @@
+mysql> source C:/Users/HP/Downloads/ecommerce_analysis.sql
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+Database changed
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.07 sec)
+
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+ERROR 1062 (23000): Duplicate entry 'aarav@email.com' for key 'customers.email'
+Query OK, 10 rows affected (0.00 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+Query OK, 14 rows affected (0.01 sec)
+Records: 14  Duplicates: 0  Warnings: 0
+
+Query OK, 23 rows affected (0.00 sec)
+Records: 23  Duplicates: 0  Warnings: 0
+
++-------------+--------------+-----------------+-----------+-------------+
+| customer_id | name         | email           | city      | joined_date |
++-------------+--------------+-----------------+-----------+-------------+
+|           1 | Aarav Sharma | aarav@email.com | Hyderabad | 2022-01-15  |
+|           4 | Sneha Reddy  | sneha@email.com | Hyderabad | 2022-07-08  |
++-------------+--------------+-----------------+-----------+-------------+
+2 rows in set (0.00 sec)
+
++----------+-------------+------------+-----------+
+| order_id | customer_id | order_date | status    |
++----------+-------------+------------+-----------+
+|       14 |           5 | 2024-04-18 | completed |
+|       28 |           5 | 2024-04-18 | completed |
+|       13 |           3 | 2024-04-10 | completed |
+|       27 |           3 | 2024-04-10 | completed |
+|       11 |           9 | 2024-04-01 | completed |
+|       25 |           9 | 2024-04-01 | completed |
+|       10 |           2 | 2024-03-20 | completed |
+|       24 |           2 | 2024-03-20 | completed |
+|        9 |           1 | 2024-03-15 | completed |
+|       23 |           1 | 2024-03-15 | completed |
+|        7 |           7 | 2024-03-01 | completed |
+|       21 |           7 | 2024-03-01 | completed |
+|        5 |           5 | 2024-02-14 | completed |
+|       19 |           5 | 2024-02-14 | completed |
+|        4 |           4 | 2024-02-01 | completed |
+|       18 |           4 | 2024-02-01 | completed |
+|        2 |           2 | 2024-01-10 | completed |
+|       16 |           2 | 2024-01-10 | completed |
+|        1 |           1 | 2024-01-05 | completed |
+|       15 |           1 | 2024-01-05 | completed |
++----------+-------------+------------+-----------+
+20 rows in set (0.00 sec)
+
++----------------------+-------------+---------+
+| product_name         | category    | price   |
++----------------------+-------------+---------+
+| Novel: The Alchemist | Books       |  350.00 |
+| Novel: The Alchemist | Books       |  350.00 |
+| Desk Lamp LED        | Appliances  |  799.00 |
+| Desk Lamp LED        | Appliances  |  799.00 |
+| Yoga Mat             | Fitness     |  899.00 |
+| Yoga Mat             | Fitness     |  899.00 |
+| Formal Shirt         | Clothing    | 1299.00 |
+| Formal Shirt         | Clothing    | 1299.00 |
+| Backpack 40L         | Accessories | 2499.00 |
+| Backpack 40L         | Accessories | 2499.00 |
+| Wireless Headphones  | Electronics | 3500.00 |
+| Wireless Headphones  | Electronics | 3500.00 |
+| Running Shoes        | Footwear    | 4200.00 |
+| Running Shoes        | Footwear    | 4200.00 |
++----------------------+-------------+---------+
+14 rows in set (0.00 sec)
+
++-------------+---------------+--------------+
+| category    | total_revenue | total_orders |
++-------------+---------------+--------------+
+| Electronics |     365996.00 |            5 |
+| Appliances  |      28790.00 |            3 |
+| Footwear    |      25200.00 |            2 |
+| Clothing    |      12990.00 |            2 |
+| Accessories |       9996.00 |            2 |
+| Fitness     |       5394.00 |            2 |
+| Books       |       2100.00 |            1 |
++-------------+---------------+--------------+
+7 rows in set (0.01 sec)
+
++-------------+--------------+--------------+-----------------+
+| customer_id | name         | total_orders | avg_order_value |
++-------------+--------------+--------------+-----------------+
+|           7 | Vikram Singh |            1 |        75000.00 |
+|           1 | Aarav Sharma |            2 |        23074.50 |
+|           5 | Karan Patel  |            2 |         5411.50 |
+|           9 | Nikhil Gupta |            1 |         4249.00 |
+|           2 | Priya Nair   |            2 |         4024.25 |
+|           4 | Sneha Reddy  |            1 |         3198.00 |
+|           3 | Rohan Mehta  |            1 |         2649.00 |
++-------------+--------------+--------------+-----------------+
+7 rows in set (0.00 sec)
+
++-----------+--------------+
+| city      | total_orders |
++-----------+--------------+
+| Hyderabad |            6 |
+| Bangalore |            4 |
+| Delhi     |            4 |
+| Mumbai    |            4 |
+| Chennai   |            2 |
+| Jaipur    |            2 |
+| Kochi     |            2 |
+| Kolkata   |            2 |
+| Pune      |            2 |
++-----------+--------------+
+9 rows in set (0.00 sec)
+
++-------------+---------------+
+| category    | total_revenue |
++-------------+---------------+
+| Electronics |     365996.00 |
++-------------+---------------+
+1 row in set (0.00 sec)
+
++--------------+-------------+
+| name         | order_count |
++--------------+-------------+
+| Aarav Sharma |           4 |
+| Priya Nair   |           4 |
+| Rohan Mehta  |           4 |
+| Sneha Reddy  |           2 |
+| Karan Patel  |           4 |
+| Divya Iyer   |           2 |
+| Vikram Singh |           2 |
+| Ananya Joshi |           2 |
+| Nikhil Gupta |           2 |
+| Meera Pillai |           2 |
++--------------+-------------+
+10 rows in set (0.00 sec)
+
++--------------+-----------+----------+------------+-----------+
+| name         | city      | order_id | order_date | status    |
++--------------+-----------+----------+------------+-----------+
+| Aarav Sharma | Hyderabad |        1 | 2024-01-05 | completed |
+| Aarav Sharma | Hyderabad |       15 | 2024-01-05 | completed |
+| Priya Nair   | Mumbai    |        2 | 2024-01-10 | completed |
+| Priya Nair   | Mumbai    |       16 | 2024-01-10 | completed |
+| Rohan Mehta  | Delhi     |        3 | 2024-01-15 | pending   |
+| Rohan Mehta  | Delhi     |       17 | 2024-01-15 | pending   |
+| Sneha Reddy  | Hyderabad |        4 | 2024-02-01 | completed |
+| Sneha Reddy  | Hyderabad |       18 | 2024-02-01 | completed |
+| Karan Patel  | Bangalore |        5 | 2024-02-14 | completed |
+| Karan Patel  | Bangalore |       19 | 2024-02-14 | completed |
+| Divya Iyer   | Chennai   |        6 | 2024-02-20 | cancelled |
+| Divya Iyer   | Chennai   |       20 | 2024-02-20 | cancelled |
+| Vikram Singh | Pune      |        7 | 2024-03-01 | completed |
+| Vikram Singh | Pune      |       21 | 2024-03-01 | completed |
+| Ananya Joshi | Kolkata   |        8 | 2024-03-10 | pending   |
+| Ananya Joshi | Kolkata   |       22 | 2024-03-10 | pending   |
+| Aarav Sharma | Hyderabad |        9 | 2024-03-15 | completed |
+| Aarav Sharma | Hyderabad |       23 | 2024-03-15 | completed |
+| Priya Nair   | Mumbai    |       10 | 2024-03-20 | completed |
+| Priya Nair   | Mumbai    |       24 | 2024-03-20 | completed |
+| Nikhil Gupta | Jaipur    |       11 | 2024-04-01 | completed |
+| Nikhil Gupta | Jaipur    |       25 | 2024-04-01 | completed |
+| Meera Pillai | Kochi     |       12 | 2024-04-05 | cancelled |
+| Meera Pillai | Kochi     |       26 | 2024-04-05 | cancelled |
+| Rohan Mehta  | Delhi     |       13 | 2024-04-10 | completed |
+| Rohan Mehta  | Delhi     |       27 | 2024-04-10 | completed |
+| Karan Patel  | Bangalore |       14 | 2024-04-18 | completed |
+| Karan Patel  | Bangalore |       28 | 2024-04-18 | completed |
++--------------+-----------+----------+------------+-----------+
+28 rows in set (0.00 sec)
+
++--------------+-----------+----------+-----------+
+| name         | city      | order_id | status    |
++--------------+-----------+----------+-----------+
+| Aarav Sharma | Hyderabad |        1 | completed |
+| Aarav Sharma | Hyderabad |        9 | completed |
+| Aarav Sharma | Hyderabad |       15 | completed |
+| Aarav Sharma | Hyderabad |       23 | completed |
+| Ananya Joshi | Kolkata   |        8 | pending   |
+| Ananya Joshi | Kolkata   |       22 | pending   |
+| Divya Iyer   | Chennai   |        6 | cancelled |
+| Divya Iyer   | Chennai   |       20 | cancelled |
+| Karan Patel  | Bangalore |        5 | completed |
+| Karan Patel  | Bangalore |       14 | completed |
+| Karan Patel  | Bangalore |       19 | completed |
+| Karan Patel  | Bangalore |       28 | completed |
+| Meera Pillai | Kochi     |       12 | cancelled |
+| Meera Pillai | Kochi     |       26 | cancelled |
+| Nikhil Gupta | Jaipur    |       11 | completed |
+| Nikhil Gupta | Jaipur    |       25 | completed |
+| Priya Nair   | Mumbai    |        2 | completed |
+| Priya Nair   | Mumbai    |       10 | completed |
+| Priya Nair   | Mumbai    |       16 | completed |
+| Priya Nair   | Mumbai    |       24 | completed |
+| Rohan Mehta  | Delhi     |        3 | pending   |
+| Rohan Mehta  | Delhi     |       13 | completed |
+| Rohan Mehta  | Delhi     |       17 | pending   |
+| Rohan Mehta  | Delhi     |       27 | completed |
+| Sneha Reddy  | Hyderabad |        4 | completed |
+| Sneha Reddy  | Hyderabad |       18 | completed |
+| Vikram Singh | Pune      |        7 | completed |
+| Vikram Singh | Pune      |       21 | completed |
++--------------+-----------+----------+-----------+
+28 rows in set (0.00 sec)
+
++--------------+----------+------------+-----------+
+| name         | order_id | order_date | status    |
++--------------+----------+------------+-----------+
+| Aarav Sharma |        1 | 2024-01-05 | completed |
+| Aarav Sharma |       15 | 2024-01-05 | completed |
+| Priya Nair   |        2 | 2024-01-10 | completed |
+| Priya Nair   |       16 | 2024-01-10 | completed |
+| Rohan Mehta  |        3 | 2024-01-15 | pending   |
+| Rohan Mehta  |       17 | 2024-01-15 | pending   |
+| Sneha Reddy  |        4 | 2024-02-01 | completed |
+| Sneha Reddy  |       18 | 2024-02-01 | completed |
+| Karan Patel  |        5 | 2024-02-14 | completed |
+| Karan Patel  |       19 | 2024-02-14 | completed |
+| Divya Iyer   |        6 | 2024-02-20 | cancelled |
+| Divya Iyer   |       20 | 2024-02-20 | cancelled |
+| Vikram Singh |        7 | 2024-03-01 | completed |
+| Vikram Singh |       21 | 2024-03-01 | completed |
+| Ananya Joshi |        8 | 2024-03-10 | pending   |
+| Ananya Joshi |       22 | 2024-03-10 | pending   |
+| Aarav Sharma |        9 | 2024-03-15 | completed |
+| Aarav Sharma |       23 | 2024-03-15 | completed |
+| Priya Nair   |       10 | 2024-03-20 | completed |
+| Priya Nair   |       24 | 2024-03-20 | completed |
+| Nikhil Gupta |       11 | 2024-04-01 | completed |
+| Nikhil Gupta |       25 | 2024-04-01 | completed |
+| Meera Pillai |       12 | 2024-04-05 | cancelled |
+| Meera Pillai |       26 | 2024-04-05 | cancelled |
+| Rohan Mehta  |       13 | 2024-04-10 | completed |
+| Rohan Mehta  |       27 | 2024-04-10 | completed |
+| Karan Patel  |       14 | 2024-04-18 | completed |
+| Karan Patel  |       28 | 2024-04-18 | completed |
++--------------+----------+------------+-----------+
+28 rows in set (0.00 sec)
+
++---------------+-----------+----------+------------+-----------+----------------------+-------------+----------+------------+------------+
+| customer_name | city      | order_id | order_date | status    | product_name         | category    | quantity | unit_price | line_total |
++---------------+-----------+----------+------------+-----------+----------------------+-------------+----------+------------+------------+
+| Aarav Sharma  | Hyderabad |        1 | 2024-01-05 | completed | Laptop Pro 15        | Electronics |        1 |   75000.00 |   75000.00 |
+| Aarav Sharma  | Hyderabad |        1 | 2024-01-05 | completed | Wireless Headphones  | Electronics |        1 |    3500.00 |    3500.00 |
+| Aarav Sharma  | Hyderabad |        1 | 2024-01-05 | completed | Laptop Pro 15        | Electronics |        1 |   75000.00 |   75000.00 |
+| Aarav Sharma  | Hyderabad |        1 | 2024-01-05 | completed | Wireless Headphones  | Electronics |        1 |    3500.00 |    3500.00 |
+| Priya Nair    | Mumbai    |        2 | 2024-01-10 | completed | Running Shoes        | Footwear    |        2 |    4200.00 |    8400.00 |
+| Priya Nair    | Mumbai    |        2 | 2024-01-10 | completed | Running Shoes        | Footwear    |        2 |    4200.00 |    8400.00 |
+| Priya Nair    | Mumbai    |        2 | 2024-01-10 | completed | Yoga Mat             | Fitness     |        1 |     899.00 |     899.00 |
+| Priya Nair    | Mumbai    |        2 | 2024-01-10 | completed | Yoga Mat             | Fitness     |        1 |     899.00 |     899.00 |
+| Rohan Mehta   | Delhi     |        3 | 2024-01-15 | pending   | Smartwatch X1        | Electronics |        1 |   12999.00 |   12999.00 |
+| Rohan Mehta   | Delhi     |        3 | 2024-01-15 | pending   | Smartwatch X1        | Electronics |        1 |   12999.00 |   12999.00 |
+| Sneha Reddy   | Hyderabad |        4 | 2024-02-01 | completed | Backpack 40L         | Accessories |        1 |    2499.00 |    2499.00 |
+| Sneha Reddy   | Hyderabad |        4 | 2024-02-01 | completed | Formal Shirt         | Clothing    |        3 |    1299.00 |    3897.00 |
+| Sneha Reddy   | Hyderabad |        4 | 2024-02-01 | completed | Backpack 40L         | Accessories |        1 |    2499.00 |    2499.00 |
+| Sneha Reddy   | Hyderabad |        4 | 2024-02-01 | completed | Formal Shirt         | Clothing    |        3 |    1299.00 |    3897.00 |
+| Karan Patel   | Bangalore |        5 | 2024-02-14 | completed | Desk Lamp LED        | Appliances  |        2 |     799.00 |    1598.00 |
+| Karan Patel   | Bangalore |        5 | 2024-02-14 | completed | Coffee Maker         | Appliances  |        1 |    5999.00 |    5999.00 |
+| Karan Patel   | Bangalore |        5 | 2024-02-14 | completed | Coffee Maker         | Appliances  |        1 |    5999.00 |    5999.00 |
+| Karan Patel   | Bangalore |        5 | 2024-02-14 | completed | Desk Lamp LED        | Appliances  |        2 |     799.00 |    1598.00 |
+| Divya Iyer    | Chennai   |        6 | 2024-02-20 | cancelled | Novel: The Alchemist | Books       |        5 |     350.00 |    1750.00 |
+| Divya Iyer    | Chennai   |        6 | 2024-02-20 | cancelled | Novel: The Alchemist | Books       |        5 |     350.00 |    1750.00 |
+| Vikram Singh  | Pune      |        7 | 2024-03-01 | completed | Laptop Pro 15        | Electronics |        1 |   75000.00 |   75000.00 |
+| Vikram Singh  | Pune      |        7 | 2024-03-01 | completed | Laptop Pro 15        | Electronics |        1 |   75000.00 |   75000.00 |
+| Ananya Joshi  | Kolkata   |        8 | 2024-03-10 | pending   | Wireless Headphones  | Electronics |        2 |    3500.00 |    7000.00 |
+| Ananya Joshi  | Kolkata   |        8 | 2024-03-10 | pending   | Wireless Headphones  | Electronics |        2 |    3500.00 |    7000.00 |
+| Aarav Sharma  | Hyderabad |        9 | 2024-03-15 | completed | Smartwatch X1        | Electronics |        1 |   12999.00 |   12999.00 |
+| Aarav Sharma  | Hyderabad |        9 | 2024-03-15 | completed | Smartwatch X1        | Electronics |        1 |   12999.00 |   12999.00 |
+| Aarav Sharma  | Hyderabad |        9 | 2024-03-15 | completed | Desk Lamp LED        | Appliances  |        1 |     799.00 |     799.00 |
+| Aarav Sharma  | Hyderabad |        9 | 2024-03-15 | completed | Desk Lamp LED        | Appliances  |        1 |     799.00 |     799.00 |
+| Priya Nair    | Mumbai    |       10 | 2024-03-20 | completed | Running Shoes        | Footwear    |        1 |    4200.00 |    4200.00 |
+| Priya Nair    | Mumbai    |       10 | 2024-03-20 | completed | Formal Shirt         | Clothing    |        2 |    1299.00 |    2598.00 |
+| Priya Nair    | Mumbai    |       10 | 2024-03-20 | completed | Running Shoes        | Footwear    |        1 |    4200.00 |    4200.00 |
+| Priya Nair    | Mumbai    |       10 | 2024-03-20 | completed | Formal Shirt         | Clothing    |        2 |    1299.00 |    2598.00 |
+| Nikhil Gupta  | Jaipur    |       11 | 2024-04-01 | completed | Backpack 40L         | Accessories |        1 |    2499.00 |    2499.00 |
+| Nikhil Gupta  | Jaipur    |       11 | 2024-04-01 | completed | Coffee Maker         | Appliances  |        1 |    5999.00 |    5999.00 |
+| Nikhil Gupta  | Jaipur    |       11 | 2024-04-01 | completed | Backpack 40L         | Accessories |        1 |    2499.00 |    2499.00 |
+| Nikhil Gupta  | Jaipur    |       11 | 2024-04-01 | completed | Coffee Maker         | Appliances  |        1 |    5999.00 |    5999.00 |
+| Meera Pillai  | Kochi     |       12 | 2024-04-05 | cancelled | Laptop Pro 15        | Electronics |        1 |   75000.00 |   75000.00 |
+| Meera Pillai  | Kochi     |       12 | 2024-04-05 | cancelled | Laptop Pro 15        | Electronics |        1 |   75000.00 |   75000.00 |
+| Rohan Mehta   | Delhi     |       13 | 2024-04-10 | completed | Yoga Mat             | Fitness     |        2 |     899.00 |    1798.00 |
+| Rohan Mehta   | Delhi     |       13 | 2024-04-10 | completed | Wireless Headphones  | Electronics |        1 |    3500.00 |    3500.00 |
+| Rohan Mehta   | Delhi     |       13 | 2024-04-10 | completed | Wireless Headphones  | Electronics |        1 |    3500.00 |    3500.00 |
+| Rohan Mehta   | Delhi     |       13 | 2024-04-10 | completed | Yoga Mat             | Fitness     |        2 |     899.00 |    1798.00 |
+| Karan Patel   | Bangalore |       14 | 2024-04-18 | completed | Smartwatch X1        | Electronics |        1 |   12999.00 |   12999.00 |
+| Karan Patel   | Bangalore |       14 | 2024-04-18 | completed | Novel: The Alchemist | Books       |        3 |     350.00 |    1050.00 |
+| Karan Patel   | Bangalore |       14 | 2024-04-18 | completed | Smartwatch X1        | Electronics |        1 |   12999.00 |   12999.00 |
+| Karan Patel   | Bangalore |       14 | 2024-04-18 | completed | Novel: The Alchemist | Books       |        3 |     350.00 |    1050.00 |
++---------------+-----------+----------+------------+-----------+----------------------+-------------+----------+------------+------------+
+46 rows in set (0.00 sec)
+
++----------------------+
+| avg_revenue_per_user |
++----------------------+
+|             64352.29 |
++----------------------+
+1 row in set (0.00 sec)
+
++-------------+--------------+-------------+
+| customer_id | name         | total_spent |
++-------------+--------------+-------------+
+|           1 | Aarav Sharma |   184596.00 |
+|           7 | Vikram Singh |   150000.00 |
+|           5 | Karan Patel  |    43292.00 |
+|           2 | Priya Nair   |    32194.00 |
+|           9 | Nikhil Gupta |    16996.00 |
+|           4 | Sneha Reddy  |    12792.00 |
+|           3 | Rohan Mehta  |    10596.00 |
++-------------+--------------+-------------+
+7 rows in set (0.00 sec)
+
++--------------+-------------+
+| name         | total_spent |
++--------------+-------------+
+| Aarav Sharma |   184596.00 |
+| Vikram Singh |   150000.00 |
++--------------+-------------+
+2 rows in set (0.00 sec)
+
++----------------------+-------------+----------+
+| product_name         | category    | price    |
++----------------------+-------------+----------+
+| Laptop Pro 15        | Electronics | 75000.00 |
+| Wireless Headphones  | Electronics |  3500.00 |
+| Running Shoes        | Footwear    |  4200.00 |
+| Yoga Mat             | Fitness     |   899.00 |
+| Smartwatch X1        | Electronics | 12999.00 |
+| Formal Shirt         | Clothing    |  1299.00 |
+| Backpack 40L         | Accessories |  2499.00 |
+| Coffee Maker         | Appliances  |  5999.00 |
+| Desk Lamp LED        | Appliances  |   799.00 |
+| Novel: The Alchemist | Books       |   350.00 |
++----------------------+-------------+----------+
+10 rows in set (0.00 sec)
+
++----------------------+-------------+----------+
+| product_name         | category    | price    |
++----------------------+-------------+----------+
+| Backpack 40L         | Accessories |  2499.00 |
+| Backpack 40L         | Accessories |  2499.00 |
+| Coffee Maker         | Appliances  |  5999.00 |
+| Coffee Maker         | Appliances  |  5999.00 |
+| Novel: The Alchemist | Books       |   350.00 |
+| Novel: The Alchemist | Books       |   350.00 |
+| Formal Shirt         | Clothing    |  1299.00 |
+| Formal Shirt         | Clothing    |  1299.00 |
+| Laptop Pro 15        | Electronics | 75000.00 |
+| Laptop Pro 15        | Electronics | 75000.00 |
+| Yoga Mat             | Fitness     |   899.00 |
+| Yoga Mat             | Fitness     |   899.00 |
+| Running Shoes        | Footwear    |  4200.00 |
+| Running Shoes        | Footwear    |  4200.00 |
++----------------------+-------------+----------+
+14 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
++-------------+---------------+-----------+--------------+---------------+-----------------+
+| customer_id | customer_name | city      | total_orders | total_revenue | avg_order_value |
++-------------+---------------+-----------+--------------+---------------+-----------------+
+|           1 | Aarav Sharma  | Hyderabad |            4 |     184596.00 |        23074.50 |
+|           7 | Vikram Singh  | Pune      |            2 |     150000.00 |        75000.00 |
+|           5 | Karan Patel   | Bangalore |            4 |      43292.00 |         5411.50 |
+|           2 | Priya Nair    | Mumbai    |            4 |      32194.00 |         4024.25 |
+|           9 | Nikhil Gupta  | Jaipur    |            2 |      16996.00 |         4249.00 |
+|           4 | Sneha Reddy   | Hyderabad |            2 |      12792.00 |         3198.00 |
+|           3 | Rohan Mehta   | Delhi     |            2 |      10596.00 |         2649.00 |
+|           6 | Divya Iyer    | Chennai   |            0 |          NULL |            NULL |
+|           8 | Ananya Joshi  | Kolkata   |            0 |          NULL |            NULL |
+|          10 | Meera Pillai  | Kochi     |            0 |          NULL |            NULL |
++-------------+---------------+-----------+--------------+---------------+-----------------+
+10 rows in set (0.00 sec)
+
++------------+----------------------+-------------+------------+------------+---------------+
+| product_id | product_name         | category    | list_price | units_sold | total_revenue |
++------------+----------------------+-------------+------------+------------+---------------+
+|          1 | Laptop Pro 15        | Electronics |   75000.00 |          6 |     450000.00 |
+|          5 | Smartwatch X1        | Electronics |   12999.00 |          6 |      77994.00 |
+|          2 | Wireless Headphones  | Electronics |    3500.00 |          8 |      28000.00 |
+|          3 | Running Shoes        | Footwear    |    4200.00 |          6 |      25200.00 |
+|          8 | Coffee Maker         | Appliances  |    5999.00 |          4 |      23996.00 |
+|          6 | Formal Shirt         | Clothing    |    1299.00 |         10 |      12990.00 |
+|          7 | Backpack 40L         | Accessories |    2499.00 |          4 |       9996.00 |
+|         10 | Novel: The Alchemist | Books       |     350.00 |         16 |       5600.00 |
+|          4 | Yoga Mat             | Fitness     |     899.00 |          6 |       5394.00 |
+|          9 | Desk Lamp LED        | Appliances  |     799.00 |          6 |       4794.00 |
+|         11 | Laptop Pro 15        | Electronics |   75000.00 |          0 |          0.00 |
+|         12 | Wireless Headphones  | Electronics |    3500.00 |          0 |          0.00 |
+|         13 | Running Shoes        | Footwear    |    4200.00 |          0 |          0.00 |
+|         14 | Yoga Mat             | Fitness     |     899.00 |          0 |          0.00 |
+|         15 | Smartwatch X1        | Electronics |   12999.00 |          0 |          0.00 |
+|         16 | Formal Shirt         | Clothing    |    1299.00 |          0 |          0.00 |
+|         17 | Backpack 40L         | Accessories |    2499.00 |          0 |          0.00 |
+|         18 | Coffee Maker         | Appliances  |    5999.00 |          0 |          0.00 |
+|         19 | Desk Lamp LED        | Appliances  |     799.00 |          0 |          0.00 |
+|         20 | Novel: The Alchemist | Books       |     350.00 |          0 |          0.00 |
++------------+----------------------+-------------+------------+------------+---------------+
+20 rows in set (0.00 sec)
+
++---------+--------------+-----------------+
+| month   | total_orders | monthly_revenue |
++---------+--------------+-----------------+
+| 2024-01 |            2 |       175598.00 |
+| 2024-02 |            2 |        27986.00 |
+| 2024-03 |            3 |       191192.00 |
+| 2024-04 |            3 |        55690.00 |
++---------+--------------+-----------------+
+4 rows in set (0.00 sec)
+
++-------------+--------------+-----------+
+| customer_id | name         | city      |
++-------------+--------------+-----------+
+|           1 | Aarav Sharma | Hyderabad |
+|           2 | Priya Nair   | Mumbai    |
+|           3 | Rohan Mehta  | Delhi     |
+|           4 | Sneha Reddy  | Hyderabad |
+|           5 | Karan Patel  | Bangalore |
+|           6 | Divya Iyer   | Chennai   |
+|           7 | Vikram Singh | Pune      |
+|           8 | Ananya Joshi | Kolkata   |
+|           9 | Nikhil Gupta | Jaipur    |
+|          10 | Meera Pillai | Kochi     |
++-------------+--------------+-----------+
+10 rows in set (0.00 sec)
+
++--------------+-------------+
+| name         | total_spent |
++--------------+-------------+
+| Aarav Sharma |   184596.00 |
+| Priya Nair   |    32194.00 |
+| Rohan Mehta  |    36594.00 |
+| Sneha Reddy  |    12792.00 |
+| Karan Patel  |    43292.00 |
+| Divya Iyer   |     3500.00 |
+| Vikram Singh |   150000.00 |
+| Ananya Joshi |    14000.00 |
+| Nikhil Gupta |    16996.00 |
+| Meera Pillai |   150000.00 |
++--------------+-------------+
+10 rows in set (0.00 sec)
+
+Empty set (0.00 sec)
+
++----------+------------+-----------+
+| order_id | order_date | status    |
++----------+------------+-----------+
+|        1 | 2024-01-05 | completed |
+|        2 | 2024-01-10 | completed |
+|        3 | 2024-01-15 | pending   |
+|        4 | 2024-02-01 | completed |
+|        5 | 2024-02-14 | completed |
+|        6 | 2024-02-20 | cancelled |
+|        7 | 2024-03-01 | completed |
+|        8 | 2024-03-10 | pending   |
+|        9 | 2024-03-15 | completed |
+|       10 | 2024-03-20 | completed |
+|       11 | 2024-04-01 | completed |
+|       12 | 2024-04-05 | cancelled |
+|       13 | 2024-04-10 | completed |
+|       14 | 2024-04-18 | completed |
+|       15 | 2024-01-05 | completed |
+|       16 | 2024-01-10 | completed |
+|       17 | 2024-01-15 | pending   |
+|       18 | 2024-02-01 | completed |
+|       19 | 2024-02-14 | completed |
+|       20 | 2024-02-20 | cancelled |
+|       21 | 2024-03-01 | completed |
+|       22 | 2024-03-10 | pending   |
+|       23 | 2024-03-15 | completed |
+|       24 | 2024-03-20 | completed |
+|       25 | 2024-04-01 | completed |
+|       26 | 2024-04-05 | cancelled |
+|       27 | 2024-04-10 | completed |
+|       28 | 2024-04-18 | completed |
++----------+------------+-----------+
+28 rows in set (0.00 sec)
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF NOT EXISTS idx_orders_customer   ON orders(customer_id)' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF NOT EXISTS idx_items_order       ON order_items(order_id)' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF NOT EXISTS idx_items_product     ON order_items(product_id)' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF NOT EXISTS idx_orders_status     ON orders(status)' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF NOT EXISTS idx_orders_date       ON orders(order_date)' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF NOT EXISTS idx_customers_city    ON customers(city)' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF NOT EXISTS idx_products_category ON products(category)' at line 1
++----+-------------+-------+------------+--------+-----------------------------------------------+---------+---------+----------------------------+------+----------+------------------------------+
+| id | select_type | table | partitions | type   | possible_keys                                 | key     | key_len | ref                        | rows | filtered | Extra                        |
++----+-------------+-------+------------+--------+-----------------------------------------------+---------+---------+----------------------------+------+----------+------------------------------+
+|  1 | SIMPLE      | oi    | NULL       | ALL    | idx_items_order                               | NULL    | NULL    | NULL                       |   46 |   100.00 | Using where; Using temporary |
+|  1 | SIMPLE      | o     | NULL       | eq_ref | PRIMARY,idx_orders_customer,idx_orders_status | PRIMARY | 4       | ecommerce_db.oi.order_id   |    1 |    71.43 | Using where                  |
+|  1 | SIMPLE      | c     | NULL       | eq_ref | PRIMARY                                       | PRIMARY | 4       | ecommerce_db.o.customer_id |    1 |   100.00 | NULL                         |
++----+-------------+-------+------------+--------+-----------------------------------------------+---------+---------+----------------------------+------+----------+------------------------------+
+3 rows in set, 1 warning (0.00 sec)
+
++---------------+-------------+------------+---------------+
+| product_name  | category    | units_sold | total_revenue |
++---------------+-------------+------------+---------------+
+| Laptop Pro 15 | Electronics |          4 |     300000.00 |
+| Smartwatch X1 | Electronics |          4 |      51996.00 |
+| Running Shoes | Footwear    |          6 |      25200.00 |
++---------------+-------------+------------+---------------+
+3 rows in set (0.00 sec)
+
++--------------+--------------+------------------+-----------------------+
+| name         | total_orders | cancelled_orders | cancellation_rate_pct |
++--------------+--------------+------------------+-----------------------+
+| Divya Iyer   |            2 |                2 |                 100.0 |
+| Meera Pillai |            2 |                2 |                 100.0 |
+| Aarav Sharma |            4 |                0 |                   0.0 |
+| Priya Nair   |            4 |                0 |                   0.0 |
+| Rohan Mehta  |            4 |                0 |                   0.0 |
+| Sneha Reddy  |            2 |                0 |                   0.0 |
+| Karan Patel  |            4 |                0 |                   0.0 |
+| Vikram Singh |            2 |                0 |                   0.0 |
+| Ananya Joshi |            2 |                0 |                   0.0 |
+| Nikhil Gupta |            2 |                0 |                   0.0 |
++--------------+--------------+------------------+-----------------------+
+10 rows in set (0.00 sec)
+
++-----------+--------------+-----------+
+| city      | city_revenue | customers |
++-----------+--------------+-----------+
+| Hyderabad |    197388.00 |         2 |
+| Pune      |    150000.00 |         1 |
+| Bangalore |     43292.00 |         1 |
+| Mumbai    |     32194.00 |         1 |
+| Jaipur    |     16996.00 |         1 |
+| Delhi     |     10596.00 |         1 |
++-----------+--------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> notee
